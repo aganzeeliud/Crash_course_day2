@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deforestation Map - Congo (DRC)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        #map { height: 600px; width: 100%; }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Deforestation in Congo (DRC) since 2010</h1>
+    <p><strong>Average Annual Deforestation Rate:</strong> 0.99%</p>
+    <p><strong>Total Forest Area Loss:</strong> 52,631.00 km2</p>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([-4.0383, 21.7587], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([-4.0383, 21.7587]).addTo(map);
+        marker.bindPopup("<b>Congo (DRC)</b><br>Avg Deforestation Rate (since 2010): 0.99%<br>Total Loss: 52,631.00 km2").openPopup();
+    </script>
+</body>
+</html>
